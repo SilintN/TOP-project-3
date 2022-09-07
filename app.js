@@ -1,9 +1,6 @@
 //Game
 
 const choices = ['Rock', 'Paper', 'Scissors'];
-let Rock = 'Rock';
-let Paper = 'Paper';
-let Scissors = 'Scissors';
 
 function getComputerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
@@ -11,7 +8,7 @@ function getComputerChoice() {
 getComputerChoice();
 
 const computerSelection = getComputerChoice();
-const playerSelection = prompt(choices);
+const playerSelection = prompt('Choose Rock, Paper, or Scissors!');
 
 function playRound() {
   if (playerSelection === computerSelection) {
@@ -24,6 +21,6 @@ function playRound() {
 
 playRound();
 
-// console.log(playRound());
+console.log(playRound());
 
 function game() {}
