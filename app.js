@@ -30,38 +30,37 @@ function game() {}
 
 // compChoice is the first variable used to get the computers choice randomly using the Math.random method
 // let compChoice = getComputerChoice();
-// let playerChoice = prompt('Choose Rock, Paper, or Scissors!');
 
 function getComputerChoice() {
   switch (Math.floor(Math.random() * 3)) {
     case 0:
-      console.log('Rock');
+      return 'Rock';
       break;
     case 1:
-      console.log('Paper');
+      return 'Paper';
       break;
     case 2:
-      console.log('Scissors');
+      return 'Scissors';
       break;
     default:
-      console.log('Something is Wrong');
+      return 'Something is Wrong';
   }
 }
 
-getComputerChoice();
+console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    console.log('Tie!');
+    return 'Tie!';
   } else if (playerSelection > computerSelection) {
-    console.log('You win!');
+    return 'You win!';
   } else if (playerSelection < computerSelection) {
-    console.log('You lose!');
+    return 'You lose!';
   } else {
-    console.log('Something Broke!');
+    return 'Something Broke!';
   }
 }
+const playerSelection = 'Rock';
+const computerSelection = getComputerChoice();
 
-playRound();
-
-// console.log(playRound());
+console.log(playRound(playerSelection, getComputerChoice()));
