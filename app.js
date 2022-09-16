@@ -28,11 +28,10 @@ function game() {}
 
 // Game - second try
 
-// compChoice is the first variable used to get the computers choice randomly using the Math.random method
-// let compChoice = getComputerChoice();
+const choices = Math.floor(Math.random() * 3);
 
 function getComputerChoice() {
-  switch (Math.floor(Math.random() * 3)) {
+  switch (choices) {
     case 0:
       return 'Rock';
       break;
@@ -60,7 +59,8 @@ function playRound(playerSelection, computerSelection) {
     return 'Something Broke!';
   }
 }
-const playerSelection = 'Rock';
+
+const playerSelection = 'Scissors';
 const computerSelection = getComputerChoice();
 
-console.log(playRound(playerSelection, getComputerChoice()));
+console.log(playRound(playerSelection, computerSelection));
