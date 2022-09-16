@@ -22,19 +22,26 @@ console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return 'Tie!';
+    alert('Tie!');
+    return 'No Score Added';
   } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-    return 'Player Wins! Rock beats Scissors';
+    alert('Player Wins! Rock beats Scissors');
+    return playerWins;
   } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-    return 'Player Loses! Rock loses to Paper';
+    alert('Player Loses! Rock loses to Paper');
+    return compWins;
   } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-    return 'Player Wins! Paper beats Rock!';
+    alert('Player Wins! Paper beats Rock!');
+    return playerWins;
   } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-    return 'Player Loses! Paper loses to Scissors';
+    alert('Player Loses! Paper loses to Scissors');
+    return compWins;
   } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-    return 'Player Wins! Scissors beats Paper!';
+    alert('Player Wins! Scissors beats Paper!');
+    return playerWins;
   } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-    return 'Player Loses! Scissors lose to Rock';
+    alert('Player Loses! Scissors lose to Rock');
+    return compWins;
   } else {
     return 'Something Broke!';
   }
@@ -42,5 +49,8 @@ function playRound(playerSelection, computerSelection) {
 
 const playerSelection = 'Rock';
 const computerSelection = getComputerChoice();
+let playerWins = 0;
+let compWins = 0;
 
 console.log(playRound(playerSelection, computerSelection));
+//console.log(playerWins, compWins);
