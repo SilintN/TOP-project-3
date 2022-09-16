@@ -1,31 +1,3 @@
-//Game - first try
-
-/* let choices = ['Rock', 'Paper', 'Scissors'];
-
-function getComputerChoice() {
-  return choices[Math.floor(Math.random() * choices.length)];
-}
-getComputerChoice();
-
-const computerSelection = getComputerChoice();
-const playerSelection = prompt('Choose Rock, Paper, or Scissors!');
-
-function playRound() {
-  if (playerSelection === computerSelection) {
-    return 'Tie';
-  } else if (playerSelection > computerSelection) {
-    return 'Player Wins';
-  } else playerSelection < computerSelection;
-  return 'Computer Wins';
-}
-
-playRound();
-
-console.log(playRound());
-
-function game() {}
-*/
-
 // Game - second try
 
 const choices = Math.floor(Math.random() * 3);
@@ -51,16 +23,24 @@ console.log(getComputerChoice());
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return 'Tie!';
-  } else if (playerSelection > computerSelection) {
-    return 'You win!';
-  } else if (playerSelection < computerSelection) {
-    return 'You lose!';
+  } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+    return 'Player Wins! Rock beats Scissors';
+  } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+    return 'Player Loses! Rock loses to Paper';
+  } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+    return 'Player Wins! Paper beats Rock!';
+  } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
+    return 'Player Loses! Paper loses to Scissors';
+  } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+    return 'Player Wins! Scissors beats Paper!';
+  } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+    return 'Player Loses! Scissors lose to Rock';
   } else {
     return 'Something Broke!';
   }
 }
 
-const playerSelection = 'Scissors';
+const playerSelection = 'Rock';
 const computerSelection = getComputerChoice();
 
 console.log(playRound(playerSelection, computerSelection));
