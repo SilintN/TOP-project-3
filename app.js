@@ -30,8 +30,7 @@ let compWins = 0;
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    alert('Tie!');
-    return 'No Score Added';
+    return 'Tie! No Score Added';
   } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
     playerWins++;
     return 'Player Wins! Rock beats Scissors';
@@ -63,7 +62,7 @@ console.log(playerWins, compWins);
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    return;
+    playRound();
   }
 }
 
