@@ -25,29 +25,31 @@ function getPlayerChoice() {
   return playerSelection;
 }
 //console.log(getPlayerChoice());
+let playerWins = 0;
+let compWins = 0;
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     alert('Tie!');
     return 'No Score Added';
   } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-    alert('Player Wins! Rock beats Scissors');
-    return playerWins;
+    playerWins++;
+    return 'Player Wins! Rock beats Scissors';
   } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-    alert('Player Loses! Rock loses to Paper');
-    return compWins;
+    compWins++;
+    return 'Player Loses! Rock loses to Paper';
   } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-    alert('Player Wins! Paper beats Rock!');
-    return playerWins;
+    playerWins++;
+    return 'Player Wins! Paper beats Rock!';
   } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
-    alert('Player Loses! Paper loses to Scissors');
-    return compWins;
+    compWins++;
+    return 'Player Loses! Paper loses to Scissors';
   } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-    alert('Player Wins! Scissors beats Paper!');
-    return playerWins;
+    playerWins++;
+    return 'Player Wins! Scissors beats Paper!';
   } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
-    alert('Player Loses! Scissors lose to Rock');
-    return compWins;
+    compWins++;
+    return 'Player Loses! Scissors lose to Rock';
   } else {
     return 'Something Broke!';
   }
@@ -55,8 +57,14 @@ function playRound(playerSelection, computerSelection) {
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
-let playerWins = 0;
-let compWins = 0;
 
 console.log(playRound(playerSelection, computerSelection));
-//console.log(playerWins, compWins);
+console.log(playerWins, compWins);
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    return;
+  }
+}
+
+game();
