@@ -17,13 +17,6 @@ function getComputerChoice() {
       return 'Something is Wrong';
   }
 }
-console.log(getComputerChoice());
-//Player Choice
-function getPlayerChoice() {
-  let playerSelection = prompt('Choose Rock, Paper, or Scissors!');
-  return playerSelection.toLowerCase();
-}
-
 //PlayRound Function
 function playRound(playerSelection, computerSelection) {
   //Game Messages
@@ -52,18 +45,19 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+// Actual Game function
+/*I had massive troubles with this part of the game. Idk what it was, maybe i tried making it to complicated to quickly
+by adding scores and different variables. I shouldve kept to what was asked and stayed simple. Probably wouldve saved me two weeks lol.*/
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt(
+      'Choose Rock, Paper, or Scissors!'
+    ).toLowerCase();
+    let computerSelection = getComputerChoice();
 
-// function game() {
-//   let playerWins = 0;
-//   let compWins = 0;
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
 
-//   for (let i = 0; i < 4; i++) {
-//     playRound(getPlayerChoice(), getComputerChoice());
-//   }
-// }
-
-// game();
+game();
