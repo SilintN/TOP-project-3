@@ -1,8 +1,9 @@
 // Game - second try
 
-const choices = Math.floor(Math.random() * 3);
 //Comp Choice
 function getComputerChoice() {
+  const choices = Math.floor(Math.random() * 3);
+
   switch (choices) {
     case 0:
       return 'rock';
