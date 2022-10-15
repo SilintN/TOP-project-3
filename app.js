@@ -1,7 +1,7 @@
 // Game - second try
 
 const choices = Math.floor(Math.random() * 3);
-
+//Comp Choice
 function getComputerChoice() {
   switch (choices) {
     case 0:
@@ -17,40 +17,38 @@ function getComputerChoice() {
       return 'Something is Wrong';
   }
 }
-
 console.log(getComputerChoice());
-
+//Player Choice
 function getPlayerChoice() {
   let playerSelection = prompt('Choose Rock, Paper, or Scissors!');
   return playerSelection.toLowerCase();
 }
-//console.log(getPlayerChoice());
-let playerWins = 0;
-let compWins = 0;
 
+//PlayRound Function
 function playRound(playerSelection, computerSelection) {
+  //Game Messages
+  const winningMessage = `You win! ${playerSelection} beats ${computerSelection}`;
+  const losingMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
+  const tieMessage = "It's a tie! You and the computer chose the same!";
+  const errorMessage = `Error! ${playerSelection} is not a valid entry. Please choose "Rock", "Paper", or "Scissors`;
+
+  //Game Mechanics
   if (playerSelection === computerSelection) {
-    return 'Tie! No Score Added';
+    return tieMessage;
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    playerWins++;
-    return 'Player Wins! Rock beats Scissors';
+    return winningMessage;
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-    compWins++;
-    return 'Player Loses! Rock loses to Paper';
+    return losingMessage;
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    playerWins++;
-    return 'Player Wins! Paper beats Rock!';
+    return winningMessage;
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    compWins++;
-    return 'Player Loses! Paper loses to Scissors';
+    return losingMessage;
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    playerWins++;
-    return 'Player Wins! Scissors beats Paper!';
+    return winningMessage;
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    compWins++;
-    return 'Player Loses! Scissors lose to Rock';
+    return losingMessage;
   } else {
-    return 'Something Broke!';
+    return errorMessage;
   }
 }
 
@@ -58,11 +56,13 @@ const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
 console.log(playRound(playerSelection, computerSelection));
-console.log(playerWins, compWins);
 
 // function game() {
-//   for (let i = 0; i < 5; i++) {
-//     playRound();
+//   let playerWins = 0;
+//   let compWins = 0;
+
+//   for (let i = 0; i < 4; i++) {
+//     playRound(getPlayerChoice(), getComputerChoice());
 //   }
 // }
 
