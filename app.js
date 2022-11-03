@@ -50,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
 /*I had massive troubles with this part of the game. Idk what it was, maybe i tried making it to complicated to quickly
 by adding scores and different variables. I shouldve kept to what was asked and stayed simple. Probably wouldve saved me two weeks lol.*/
 
-function game() {
+/*function game() {
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt(
       'Choose Rock, Paper, or Scissors!'
@@ -61,4 +61,19 @@ function game() {
   }
 }
 
-game();
+game(); */
+
+const rockBtn = document.querySelector('#rockBtn');
+rockBtn.addEventListener('click', function (e) {
+  console.log('Rock');
+});
+
+const paperbBtn = document.querySelector('#paperBtn');
+paperBtn.addEventListener('click', function (e) {
+  console.log('Paper');
+});
+
+const scissorsBtn = document.querySelector('#scissorsBtn');
+scissorsBtn.addEventListener('click', function (e) {
+  console.log('Scissors');
+});
