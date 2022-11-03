@@ -1,0 +1,21 @@
+body {
+  display: block;
+  height: 400px;
+}
+.header {
+  height: 100px;
+}
+.container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 10px;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
